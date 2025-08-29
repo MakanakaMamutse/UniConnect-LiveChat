@@ -1,8 +1,11 @@
 # UniConnect Live Chat 💬
 
-**Real-Time Communication Platform for University Environments**
+**Real-Time Communication Platform for University Environments**  
+*Enterprise Programming in Java - Academic Project*
 
 UniConnect is a comprehensive web-based messaging platform that enables students and academic staff to engage in secure, real-time conversations. Built with enterprise-grade Java technologies, this application demonstrates modern web communication patterns using WebSockets, Servlets, and dynamic client-side functionality.
+
+<img width="1916" height="955" alt="image" src="https://github.com/user-attachments/assets/221e33f4-b6b0-4507-9d73-4acba0742149" />
 
 ## 🚀 Features
 
@@ -223,9 +226,9 @@ This project demonstrates proficiency in:
 
 ## 📞 Contact
 
-**Project Developer**: Makanaka Mamutse   
-**Course**: Enterprise Programming in Java - Web Development  
+**Project Developer**: Makanaka Mamutse
+**Course**: ITEJA3-33 - Enterprise Programming in Java  
 
 ---
 
-*Built with ☕ Java and lots of learning at BrightFuture University*
+*Built with ☕ Java and lots of learning*
