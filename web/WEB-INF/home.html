@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniConnect - Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 40px 20px;
+        }
+
+        .welcome-card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .welcome-title {
+            font-size: 2.5em;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #4CAF50;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <nav class="navbar">
+        <div class="logo">UniConnect</div>
+        <div class="user-info">
+            <!-- User welcome message with status indicator -->
+            <span><span class="status-indicator"></span>Welcome back, <span id="username">User</span>!</span>
+            <!-- Logout button -->
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <div class="welcome-card">
+            <!-- Main welcome heading -->
+            <h1 class="welcome-title">Welcome to UniConnect</h1>
+            <!-- Subtitle describing the platform -->
+            <p class="welcome-subtitle">Your gateway to real-time communication at BrightFuture University</p>
+            
+            <!-- Feature cards grid -->
+            <div class="feature-grid">
+                <!-- Live Chat feature card -->
+                <a href="conversations" class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-title">Live Chat</div>
+                    <div class="feature-description">Join real-time conversations with students and staff</div>
+                </a>
+                
+                <!-- Video Chat feature card -->
+                <a href="chat" class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <div class="feature-title">Video Chat</div>
+                    <div class="feature-description">Connect face-to-face with the community</div>
+                </a>
+                
+                <!-- Study Groups feature card (coming soon placeholder) -->
+                <a href="#" class="feature-card" onclick="showComingSoon()">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-title">Study Groups</div>
+                    <div class="feature-description">Coming soon - Collaborate on assignments</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Extracting username from server-side template variable
+        // HomeServlet replaces ${username} with actual username
+        const username = '${username}' || 'User';
+        document.getElementById('username').textContent = username;
+        
+        // Logout function with confirmation dialog
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Redirecting to logout endpoint to clear session
+                window.location.href = 'logout';
+            }
+        }
+        
+        // Placeholder function for upcoming features
+        function showComingSoon() {
+            alert('This feature is coming soon!');
+        }
+    </script>
+</body>
+</html>
